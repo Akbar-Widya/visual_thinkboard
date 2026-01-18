@@ -36,7 +36,7 @@ const Sidebar = () => {
             Developed by Akbar Widya
           </span>
           <a 
-            href="https://github.com/yourusername" 
+            href="https://github.com/Akbar-Widya" 
             target="_blank" 
             rel="noreferrer"
             className="text-text-muted hover:text-text-main transition-colors"
