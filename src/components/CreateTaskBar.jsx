@@ -3,6 +3,7 @@ import { useTaskStore } from '../store/useTaskStore';
 
 const CreateTaskBar = () => {
   const [title, setTitle] = useState('');
+  // addTask is a function
   const addTask = useTaskStore((state) => state.addTask);
 
   const handleSubmit = (e) => {

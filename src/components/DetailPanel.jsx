@@ -23,39 +23,35 @@ const DetailPanel = () => {
   if (!selectedTask) return null;
 
   return (
-    <div className="w-96 border-l border-border bg-white flex flex-col p-6 shadow-xl animate-in slide-in-from-right duration-200">
-      <div className="flex justify-between items-center mb-8">
-        <h2 className="text-xs font-bold uppercase tracking-widest text-text-muted">
-          Task Detail
+    <div className="w-96 border-l border-border bg-white flex flex-col p-5 shadow-xl animate-in slide-in-from-right duration-200">
+      <div className="flex justify-between items-start mb-5 gap-3">
+        <h2 className="text-lg font-bold text-text-main leading-tight">
+          {selectedTask.title}
         </h2>
         <button
           onClick={() => setSelectedTask(null)}
-          className="text-text-muted hover:text-text-main cursor-pointer"
+          className="text-text-muted hover:text-text-main cursor-pointer text-xl p-1 -mt-1"
         >
           ✕
         </button>
       </div>
 
-      <h3 className="text-lg font-bold mb-4">{selectedTask.title}</h3>
-
-      <div className="space-y-2">
-        <label className="text-[11px] font-bold uppercase text-text-muted">
-          Description
-        </label>
+      <div className="flex flex-col gap-2">
         <textarea
           value={desc}
           onChange={(e) => setDesc(e.target.value)}
           onBlur={() => updateDescription(selectedTask.id, desc)}
           placeholder="Add more details..."
-          className="w-full h-40 p-3 bg-side-bg border border-border rounded-md text-sm focus:outline-none focus:border-accent resize-none"
+          className="w-full h-50 p-3 bg-side-bg border border-border rounded-md text-sm focus:outline-none focus:border-accent resize-none"
         />
         <p className="text-[10px] text-text-muted italic">
           Saves automatically when you click away.
         </p>
       </div>
-      <div className="mt-auto pt-6 border-t border-border">
-        <div className="flex flex-col gap-1">
-          <span className="text-[10px] font-bold uppercase text-text-muted">
+
+      <div className="mt-8 pt-4 border-t border-border">
+        <div className="flex flex-col gap-0.5">
+          <span className="text-[10px] font-bold uppercase text-text-muted tracking-wide">
             Created
           </span>
           <span className="text-xs text-text-main">

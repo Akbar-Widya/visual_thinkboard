@@ -17,7 +17,7 @@ const ListView = () => {
         {/* We remove the .filter((t) => t.status === col) because there are no columns here */}
         {filteredTasks.length > 0 ? (
           filteredTasks.map((task) => (
-            <TaskRow key={task.id} task={task} />
+            <TaskRow key={task.id} task={task} showIndicator={true} />
           ))
         ) : (
           <div className="p-10 text-center text-sm text-text-muted">

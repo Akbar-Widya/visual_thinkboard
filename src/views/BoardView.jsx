@@ -15,7 +15,7 @@ const BoardView = () => {
   return (
     <div className="flex flex-1 h-full gap-6 p-6 overflow-x-auto bg-white">
       {columns.map((col) => (
-        <div key={col} className="w-80 flex flex-col shrink-0">
+        <div key={col} className="flex-1 min-w-80 max-w-110 flex flex-col shrink-0">
           {/* Column Header */}
           <div className="flex items-center justify-between mb-4 px-2">
             <h3 className="text-[11px] font-bold uppercase tracking-wider text-text-muted">

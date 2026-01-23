@@ -32,6 +32,7 @@ export const useTaskStore = create((set, get) => ({
       .select();
 
     if (!error) {
+      // Append the new task from db to the existing tasks state
       set((state) => ({ tasks: [...state.tasks, ...data] }));
     } else {
       alert("Error adding task");
@@ -48,6 +49,7 @@ export const useTaskStore = create((set, get) => ({
     if (!error) {
       // Local Update (Optimistic)
       set((state) => ({
+        // state.tasks is the existing tasks state
         tasks: state.tasks.map((t) =>
           t.id === taskId ? { ...t, status: newStatus } : t
         ),
