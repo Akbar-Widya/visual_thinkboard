@@ -36,27 +36,22 @@ const DetailPanel = () => {
         </button>
       </div>
 
-      <div className="flex flex-col gap-2">
-        <textarea
-          value={desc}
-          onChange={(e) => setDesc(e.target.value)}
-          onBlur={() => updateDescription(selectedTask.id, desc)}
-          placeholder="Add more details..."
-          className="w-full h-50 p-3 bg-side-bg border border-border rounded-md text-sm focus:outline-none focus:border-accent resize-none"
-        />
-        <p className="text-[10px] text-text-muted italic">
-          Saves automatically when you click away.
-        </p>
-      </div>
+      <textarea
+        value={desc}
+        onChange={(e) => setDesc(e.target.value)}
+        onBlur={() => updateDescription(selectedTask.id, desc)}
+        placeholder="Add more details..."
+        className="w-full h-60 p-3 bg-side-bg border border-border rounded-md text-sm focus:outline-none focus:border-accent resize-none"
+      />
 
       <div className="mt-8 pt-4 border-t border-border">
         <div className="flex flex-col gap-0.5">
-          <span className="text-[10px] font-bold uppercase text-text-muted tracking-wide">
-            Created
-          </span>
-          <span className="text-xs text-text-main">
-            {formatDate(selectedTask.created_at)}
-          </span>
+          <p className="text-[10px] text-text-muted italic">
+            Saves automatically when you click away.
+          </p>
+          <p className="text-xs text-text-main">
+            <span className="font-semibold">Created:</span> {formatDate(selectedTask.created_at)}
+          </p>
         </div>
       </div>
     </div>
